@@ -28,3 +28,18 @@ module.exports.validateRegisterInput = (
     valid: Object.keys(errors).length < 1,
   };
 };
+
+module.exports.validateLoginInput = (username, password) => {
+  errors = {};
+  if (username.trim() === '') {
+    errors.username = 'Please enter a username.';
+  }
+  if (password.trim() === '') {
+    errors.password = 'Please enter a password.';
+  }
+
+  return {
+    errors,
+    valid: Object.keys(errors).length < 1,
+  };
+};
