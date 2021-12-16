@@ -1,0 +1,25 @@
+{
+  "name": "baseline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evan-Walter/baseline.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Evan-Walter/baseline/issues"
+  },
+  "homepage": "https://github.com/Evan-Walter/baseline#readme",
+  "dependencies": {
+    "apollo-server": "^3.5.0",
+    "graphql": "^15.8.0",
+    "mongoose": "^6.1.2"
+  }
+}
