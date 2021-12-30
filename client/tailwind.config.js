@@ -3,6 +3,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        textlight: '#e6e6e6',
         btnprimary: '#c31432',
         bgprimary: '#000',
         bgsecondary: '#212327', // inputs
