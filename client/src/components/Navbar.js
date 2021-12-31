@@ -2,17 +2,23 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 export default function Navbar() {
+  const pathname = window.location.pathname;
+  const path = (pathname === '') ? '/home' : pathname.substr();
+  
   const [barsExpanded, setBarsExpanded] = useState(false);
+  const [activeItem, setActiveItem] = useState(path);
 
   function handleBars() {
     setBarsExpanded(s => !s);
   }
-
-  function closeBars() {
+  
+  function handleActive(e, { name }) {
+    setActiveItem(name);
     setBarsExpanded(false);
   }
 
   const navLink = 'py-2 px-4 hover:bg-gray-200 hover:rounded-3xl';
+  const activeLink = ' lg:border-b-2 lg:border-black hover:border-gray-200';
 
   return (
     <nav className='block lg:flex lg:items-center lg:justify-between py-4 px-8 bg-bglight text-black'>
@@ -30,9 +36,9 @@ export default function Navbar() {
         </div>
       </div>
       <div className={(barsExpanded ? 'flex flex-col' : 'hidden lg:flex') + ' text-center'}>
-        <NavLink className={navLink} to='/' onClick={closeBars}>Home</NavLink>
-        <NavLink className={navLink} to='/register' onClick={closeBars}>Register</NavLink>
-        <NavLink className={navLink} to='/login' onClick={closeBars}>Login</NavLink>
+        <NavLink className={navLink + (activeItem === '/' ? activeLink : '')} to='/' onClick={handleActive}>Home</NavLink>
+        <NavLink className={navLink + (activeItem === '/register' ? activeLink : '')} to='/register' onClick={handleActive}>Register</NavLink>
+        <NavLink className={navLink + (activeItem === '/login' ? activeLink : '')} to='/login' onClick={handleActive}>Login</NavLink>
       </div>
     </nav>
   );
