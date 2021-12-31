@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Evan-Walter/baseline#readme",
   "dependencies": {
-    "apollo-server": "^3.5.0",
+    "apollo-server": "^3.6.1",
     "bcryptjs": "^2.4.3",
     "fomantic-ui": "^2.9.0-beta.173",
     "graphql": "^16.2.0",
