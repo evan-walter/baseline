@@ -5,7 +5,7 @@ import PostCard from '../components/PostCard';
 
 export default function Home() {
   const { loading, data } = useQuery(FETCH_POSTS_QUERY);
-  
+
   if (data) console.log(data);
 
   return (
