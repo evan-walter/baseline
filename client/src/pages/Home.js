@@ -8,18 +8,15 @@ export default function Home() {
 
   return (
     <div>
-      <div>Home</div>
-      <div>
-        <h1>Recent Posts</h1>
-        <div>
-          {loading ? <h1>Loading posts...</h1> :
-          data.getPosts && data.getPosts.map(post => (
-            <div key={post.id}>
-              <PostCard post={post} />
-            </div>
-          ))
-          }
-        </div>
+      <h1 className='text-lg text-center'>Home</h1>
+      <div className='border-x border-t border-gray-600'>
+        {loading ? <h1>Loading posts...</h1> :
+        data.getPosts && data.getPosts.map(post => (
+          <div className='border-b border-gray-600' key={post.id}>
+            <PostCard post={post} />
+          </div>
+        ))
+        }
       </div>
     </div>
   );

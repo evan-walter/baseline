@@ -14,8 +14,12 @@ export default function PostCard({
     commentCount,
   },
 }) {
-  function likePost () {
+  function likePost() {
     console.log('Like post!');
+  }
+
+  function commentOnPost() {
+    console.log('Comment on post!');
   }
 
   return (
@@ -27,6 +31,8 @@ export default function PostCard({
       <div>{body}</div>
       <button onClick={likePost}>Like Post</button>
       <div>{likeCount}</div>
+      <button onClick={commentOnPost}>Comment</button>
+      <div>{commentCount}</div>
     </div>
   );
 }
