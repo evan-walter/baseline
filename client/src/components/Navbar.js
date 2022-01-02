@@ -17,8 +17,8 @@ export default function Navbar() {
     setBarsExpanded(false);
   }
 
-  const navLink = 'py-2 px-4 hover:bg-gray-200 hover:rounded-3xl';
-  const activeLink = ' lg:border-b-2 lg:border-black hover:border-gray-200';
+  const navLink = 'py-2 px-4 hover:bg-gray-100 hover:rounded-3xl';
+  const activeLink = ' lg:bg-gray-200 lg:rounded-3xl';
 
   return (
     <nav className='block lg:flex lg:items-center lg:justify-between py-4 px-8 bg-bglight text-black'>
