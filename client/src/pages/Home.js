@@ -9,9 +9,9 @@ export default function Home() {
   console.log(data);
 
   return (
-    <div>
-      <h1 className='mb-4 text-lg text-center'>Home</h1>
-      <div className='md:w-7/12 m-auto border-t border-gray-600'>
+    <div className='max-w-xl m-auto'>
+      <h1 className='mb-4 text-lg text-center'>Recent Posts</h1>
+      <div className='border-t border-gray-600'>
         {loading ? <h1>Loading posts...</h1> :
         data.getPosts && data.getPosts.map(post => (
           <div key={post.id}>
