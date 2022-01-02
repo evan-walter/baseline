@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 export default function PostCard({
   post: {
@@ -16,7 +17,9 @@ export default function PostCard({
   return (
     <div>
       <div>{username}</div>
-      <div>{moment(createdAt).fromNow()}</div>
+      <Link to={`/posts/${id}`}>
+        <div>{moment(createdAt).fromNow(true)}</div>
+      </Link>
       <div>{body}</div>
       <div>buttons here</div>
     </div>

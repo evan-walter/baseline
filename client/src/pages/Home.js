@@ -6,12 +6,21 @@ import PostCard from '../components/PostCard';
 export default function Home() {
   const { loading, data } = useQuery(FETCH_POSTS_QUERY);
 
-  if (data) console.log(data);
-
   return (
     <div>
       <div>Home</div>
-      <div>yo</div>
+      <div>
+        <h1>Recent Posts</h1>
+        <div>
+          {loading ? <h1>Loading posts...</h1> :
+          data.getPosts && data.getPosts.map(post => (
+            <div key={post.id}>
+              <PostCard post={post} />
+            </div>
+          ))
+          }
+        </div>
+      </div>
     </div>
   );
 }
