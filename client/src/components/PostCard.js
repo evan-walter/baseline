@@ -14,6 +14,10 @@ export default function PostCard({
     commentCount,
   },
 }) {
+  function likePost () {
+    console.log('Like post!');
+  }
+
   return (
     <div>
       <div>{username}</div>
@@ -21,7 +25,8 @@ export default function PostCard({
         <div>{moment(createdAt).fromNow(true)}</div>
       </Link>
       <div>{body}</div>
-      <div>buttons here</div>
+      <button onClick={likePost}>Like Post</button>
+      <div>{likeCount}</div>
     </div>
   );
 }
