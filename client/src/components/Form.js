@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from './Button';
 
 export default function Form({ register }) {
   const [values, setValues] = useState({
@@ -23,7 +24,7 @@ export default function Form({ register }) {
   return (
     <div className='flex justify-center border border-bordergray'>
       <div className='w-full max-w-xl pt-2 pb-8 px-24 bg-bgprimary rounded-xl'>
-        <h1 className='text-4xl text-themeprimary text-center font-black'>b</h1>
+        <h1 className='text-4xl text-textlight text-center font-black'>b</h1>
         <h1 className='py-4 text-xl'>{register ? 'Register' : 'Login'}</h1>
         <form onSubmit={onSubmit}>
           <div className={item}>
@@ -50,6 +51,9 @@ export default function Form({ register }) {
                 value={values.confirmPassword} onChange={onChange} className={input} />
             </div>
           ) : null}
+          <div className='pt-4'>
+            <Button text={register ? 'Register' : 'Login'} />
+          </div>
         </form>
       </div>
     </div>
