@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import gql from 'graphql-tag';
 import Button from './Button';
 
 export default function Form({ register }) {
@@ -13,8 +15,16 @@ export default function Form({ register }) {
     setValues({ ...values, [e.target.name]: e.target.value })
   };
 
+  const [addUser, { loading }] = useMutation(REGISTER_USER, {
+    update(proxy, result) {
+      console.log(result);
+    },
+    variables: values
+  });
+
   const onSubmit = (e) => {
     e.preventDefault();
+    addUser();
   }
 
   const item = 'py-2 flex flex-col';
@@ -59,3 +69,23 @@ export default function Form({ register }) {
     </div>
   );
 }
+
+const REGISTER_USER = gql`
+  mutation register (
+    $username: String!
+    $email: String!
+    $password: String!
+    $confirmPassword: String!
+  ) {
+    register (
+      registerInput: {
+        username: $username
+        email: $email
+        password: $password
+        confirmPassword: $confirmPassword
+      }
+    ) {
+      id email username createdAt token
+    }
+  }
+`
