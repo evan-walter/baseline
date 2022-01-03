@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Form(register) {
+export default function Form({ register }) {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -17,10 +17,11 @@ export default function Form(register) {
   }
 
   const label = '';
-  const input = 'p-1 text-textlight bg-bgsecondary focus:outline-none rounded';
+  const input = 'py-1 px-4 text-textlight bg-bgsecondary focus:outline-none rounded-full';
 
   return (
     <div>
+      {register ? <div>Register</div> : <div>Login</div>}
       <form onSubmit={onSubmit}>
         <label htmlFor='username' className={label}>Username</label>
         <input id='username' type='text' maxLength='256' required name='username'
