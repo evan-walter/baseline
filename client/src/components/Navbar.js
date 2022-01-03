@@ -25,7 +25,7 @@ export default function Navbar() {
     <nav className='block lg:flex lg:items-center lg:justify-between py-4 px-8 bg-bgprimary textlight border-b border-bordergray'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center'>
-          <NavLink to='/' className='text-5xl text-green-500 font-black' onClick={handleActive}>b</NavLink>
+          <NavLink to='/' className='text-5xl text-themeprimary font-black' onClick={handleActive}>b</NavLink>
         </div>
         <div className='lg:hidden'>
           <button className='' onClick={handleBars}>
