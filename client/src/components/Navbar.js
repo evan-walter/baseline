@@ -17,11 +17,11 @@ export default function Navbar() {
     setBarsExpanded(false);
   }
 
-  const navLink = 'py-2 px-4 hover:bg-gray-100 hover:rounded-3xl';
-  const activeLink = ' lg:bg-gray-200 lg:rounded-3xl';
+  const navLink = 'py-2 px-4 hover:bg-bghover hover:rounded-3xl';
+  const activeLink = ' lg:bg-bgsecondary lg:rounded-3xl';
 
   return (
-    <nav className='block lg:flex lg:items-center lg:justify-between py-4 px-8 bg-bglight text-black'>
+    <nav className='block lg:flex lg:items-center lg:justify-between py-4 px-8 bg-bgprimary text-textlight border-b border-bordergray'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center'>
           <NavLink to='/' className='text-5xl font-black' onClick={handleActive}>b</NavLink>

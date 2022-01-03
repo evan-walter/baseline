@@ -23,7 +23,7 @@ export default function PostCard({
   }
 
   return (
-    <div className='flex border-x border-b border-gray-600'>
+    <div className='flex border-x border-b border-bordergray'>
       <div className='flex basis-full m-2'>
         <div className='flex-none mr-2 w-contain'>
           <div className='h-12 w-12 m-2 border border-white rounded-full'></div>
