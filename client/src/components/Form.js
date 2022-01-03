@@ -28,13 +28,13 @@ export default function Form({ register }) {
   }
 
   const item = 'py-2 flex flex-col';
-  const label = 'py-1 text-themeprimary';
+  const label = 'py-1 text-themeprimary cursor-text';
   const input = ' my-1 p-2 text-textlight bg-bgprimary border border-bordergray focus:outline-none focus:ring focus:ring-themeprimary rounded';
 
   return (
     <div className='flex justify-center border border-bordergray'>
       <div className='w-full max-w-xl pt-2 pb-8 px-24 bg-bgprimary rounded-xl'>
-        <h1 className='text-4xl text-textlight text-center font-black'>b</h1>
+        <h1 className='text-4xl text-textlight text-center font-black cursor-default'>b</h1>
         <h1 className='py-4 text-xl'>{register ? 'Register' : 'Login'}</h1>
         <form onSubmit={onSubmit}>
           <div className={item}>
