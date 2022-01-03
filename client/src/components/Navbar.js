@@ -22,10 +22,10 @@ export default function Navbar() {
   const activeLink = ' lg:bg-bgsecondary lg:rounded-3xl';
 
   return (
-    <nav className='block lg:flex lg:items-center lg:justify-between py-4 px-8 bg-bgprimary text-textlight border-b border-bordergray'>
+    <nav className='block lg:flex lg:items-center lg:justify-between py-4 px-8 bg-bgprimary textlight border-b border-bordergray'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center'>
-          <NavLink to='/' className='text-5xl font-black' onClick={handleActive}>b</NavLink>
+          <NavLink to='/' className='text-5xl text-green-500 font-black' onClick={handleActive}>b</NavLink>
         </div>
         <div className='lg:hidden'>
           <button className='' onClick={handleBars}>

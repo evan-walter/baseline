@@ -9,16 +9,14 @@ import Navbar from './Navbar';
 export default function App() {
   return (
     <Router>
+      <div className='text-textlight'>
         <Navbar />
-        <div className='bg-bgprimary text-textlight'>
-          <div className='py-4 px-8'>
-            <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='/login' element={<Login />} />
-              <Route path='/register' element={<Register />} />
-            </Routes>
-          </div>
-        </div>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

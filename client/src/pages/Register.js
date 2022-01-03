@@ -1,10 +1,11 @@
 import React from 'react';
+import Section from '../components/Section';
 import Form from '../components/Form';
 
 export default function Register() {
   return (
-    <div className='min-h-screen flex basis-full'>
+    <Section auth>
       <Form register />
-    </div>
+    </Section>
   );
 }

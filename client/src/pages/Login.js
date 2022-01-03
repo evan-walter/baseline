@@ -1,10 +1,11 @@
 import React from 'react';
+import Section from '../components/Section';
 import Form from '../components/Form';
 
 export default function Login() {
   return (
-    <div className='min-h-screen'>
+    <Section auth>
       <Form />
-    </div>
+    </Section>
   );
 }

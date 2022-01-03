@@ -31,14 +31,14 @@ export default function PostCard({
         <div className='flex-1'>
           <div className='flex items-center'>
             <div className='mr-2 font-bold'>{username}</div>
-            <div className='mr-2 text-xs text-gray-500'>·</div>
-            <Link className='text-gray-500' to={`/posts/${id}`}>
+            <div className='mr-2 text-xs text-textgray'>·</div>
+            <Link className='text-textgray' to={`/posts/${id}`}>
               <div>{moment(createdAt).fromNow(true)}</div>
             </Link>
           </div>
           <div className='mb-1'>{body}</div>
-          <div className='flex items-center justify-between text-gray-500'>
-            <button className='flex items-center hover:text-green-500' onClick={likePost}>
+          <div className='flex items-center justify-between text-textgray'>
+            <button className='flex items-center hover:text-themeprimary' onClick={likePost}>
               <div className='mr-2'>
                 <svg height='1.2rem' width='1.2rem' xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'>
                   <path d='M12.72 2c.15-.02.26.02.41.07c.56.19.83.79.66 1.35c-.17.55-1 3.04-1 3.58c0 .53.75 1 1.35 1h3c.6 0 1 .4 1 1s-2 7-2 7c-.17.39-.55 1-1 1H6V8h2.14c.41-.41 3.3-4.71 3.58-5.27c.21-.41.6-.68 1-.73zM2 8h2v9H2V8z' fill='currentColor' />

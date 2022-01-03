@@ -1,32 +1,56 @@
 import React, { useState } from 'react';
 
 export default function Form({ register }) {
-  const [formData, setFormData] = useState({
+  const [values, setValues] = useState({
     username: '',
     email: '',
     password: '',
     confirmPassword: '',
   });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+  const onChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value })
   };
 
-  const onSubmit = () => {
-    console.log('Form submission');
+  const onSubmit = (e) => {
+    e.preventDefault();
   }
 
-  const label = '';
-  const input = 'py-1 px-4 text-textlight bg-bgsecondary focus:outline-none rounded-full';
+  const item = 'my-2 flex flex-col';
+  const label = 'my-1';
+  const input = ' my-1 p-2 text-textlight bg-bgsecondary focus:outline-none focus:ring focus:ring-themeprimary rounded';
 
   return (
-    <div>
-      {register ? <div>Register</div> : <div>Login</div>}
-      <form onSubmit={onSubmit}>
-        <label htmlFor='username' className={label}>Username</label>
-        <input id='username' type='text' maxLength='256' required name='username'
-          value={formData.username} onChange={handleChange} className={input} />
-      </form>
+    <div className='flex justify-center border border-bordergray'>
+      <div>
+        <h1 className='mb-2 text-lg'>{register ? 'Register' : 'Login'}</h1>
+        <form onSubmit={onSubmit}>
+          <div className={item}>
+            <label htmlFor='username' className={label}>Username</label>
+            <input id='username' type='text' maxLength='50' required name='username' placeholder='Username'
+              value={values.username} onChange={onChange} className={input} />
+          </div>
+          {register ? (
+            <div className={item}>
+              <label htmlFor='email' className={label}>Email</label>
+              <input id='email' type='text' maxLength='50' required name='email' placeholder='Email'
+                value={values.email} onChange={onChange} className={input} />
+            </div>
+          ) : null}
+          <div className={item}>
+            <label htmlFor='password' className={label}>Password</label>
+            <input id='password' type='text' maxLength='50' required name='password' placeholder='Password'
+              value={values.password} onChange={onChange} className={input} />
+          </div>
+          {register ? (
+            <div className={item}>
+              <label htmlFor='confirmPassword' className={label}>Confirm Password</label>
+              <input id='confirmPassword' type='text' maxLength='50' required name='confirmPassword' placeholder='Confirm Password'
+                value={values.confirmPassword} onChange={onChange} className={input} />
+            </div>
+          ) : null}
+        </form>
+      </div>
     </div>
   );
 }
