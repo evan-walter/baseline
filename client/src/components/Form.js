@@ -11,6 +11,8 @@ export default function Form({ register }) {
     confirmPassword: '',
   });
 
+  const [errors, setErrors] = useState({});
+
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value })
   };
@@ -18,6 +20,10 @@ export default function Form({ register }) {
   const [addUser, { loading }] = useMutation(REGISTER_USER, {
     update(proxy, result) {
       console.log(result);
+    },
+    onError(err) {
+      setErrors(err.graphQLErrors[0].extensions.exception.errors);
+      console.log(err.graphQLErrors[0].extensions.exception.errors);
     },
     variables: values
   });
@@ -36,7 +42,16 @@ export default function Form({ register }) {
       <div className='w-full max-w-xl pt-2 pb-8 px-24 bg-bgprimary rounded-xl'>
         <h1 className='text-4xl text-textlight text-center font-black cursor-default'>b</h1>
         <h1 className='py-4 text-xl'>{register ? 'Register' : 'Login'}</h1>
-        <form onSubmit={onSubmit}>
+        {Object.keys(errors).length > 0 ? (
+          <div>
+            <ul>
+              {Object.values(errors).map(value => (
+                <li key={value}>{value}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+        <form onSubmit={onSubmit} noValidate>
           <div className={item}>
             <label htmlFor='username' className={label}>Username</label>
             <input id='username' type='text' maxLength='50' required name='username' placeholder='Username'
