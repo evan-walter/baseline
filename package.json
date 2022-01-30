@@ -20,12 +20,11 @@
   },
   "homepage": "https://github.com/Evan-Walter/baseline#readme",
   "dependencies": {
-    "apollo-server": "^3.6.1",
+    "apollo-server": "^3.6.2",
     "bcryptjs": "^2.4.3",
-    "fomantic-ui": "^2.9.0-beta.173",
-    "graphql": "^16.2.0",
+    "graphql": "^16.3.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.1.6"
+    "mongoose": "^6.1.8"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
